@@ -66,7 +66,9 @@ $(function(){
 	
 	//创建新文件
 	$("body").on("click","#header_button_createfile",function(){
-		
+		$("#create_file").css("display","auto");
+		$("#display_current_url").html($("#header_address_content").val());
+		auto_reset($("div.hidden_div"));
 	});
 });
 /* 访问文件夹 */

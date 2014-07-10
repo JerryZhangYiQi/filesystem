@@ -8,8 +8,6 @@ div.hidden_div_container{
 }
 div.hidden_div_container div.hidden_div_bg{
 	position:absolute;
-	width:999em;
-	height:999em;
 	background-color:#000000;
 	top:0px;
 	left:0px;
@@ -25,11 +23,16 @@ div.hidden_div_container div.hidden_div{
 	left:0px;
 	border:2px solid #d1d1d1;
 }
+
+/*
+ * 标题栏
+ */
 div.hidden_div_container div.hidden_div div.hidden_div_title{
-	text-align:right;
 	background-color:#d1d1d1;
 }
+/*标题栏关闭按钮*/
 div.hidden_div_container div.hidden_div div.hidden_div_title span.close{
+	float:right;
 	width:15px;
 	height:15px;
 	color:#fff;
@@ -38,4 +41,26 @@ div.hidden_div_container div.hidden_div div.hidden_div_title span.close{
 }
 div.hidden_div_container div.hidden_div div.hidden_div_title span.close:hover{
 	color:orange;
+}
+/*
+ * 内容
+ */
+div.hidden_div_container div.hidden_div div.hidden_div_content{
+	width:400px;
+	height:100px;
+}
+/*
+ * 按钮
+ */
+div.hidden_div_container div.hidden_div span.hidden_div_button{
+	border:1px solid #111;
+	border-radius:6px;
+	cursor:pointer;
+}
+
+#create_file_div{
+	width:400px;
+}
+#create_file_div th{
+	text-align:right;
 }

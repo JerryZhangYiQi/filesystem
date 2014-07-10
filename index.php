@@ -14,6 +14,7 @@ if(empty($_POST['url'])){
 <title>简易文件系统</title>
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
 <link rel="stylesheet" type="text/css" href="css/basic_style.css" />
+<link rel="stylesheet" type="text/css" href="css/hidden_div.css" />
 <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 </head>
 <body>
@@ -82,6 +83,8 @@ if(empty($_POST['url'])){
 	<div id="footer">
 		<p>Simple Web FileSystem	Write By:Jerry	Version:0.0.1</p>
 	</div>
+	<?php require 'hidden_div.html' ?>
 <script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/hidden_div.js"></script>
 </body>
 </html>
