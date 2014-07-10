@@ -1,0 +1,166 @@
+@CHARSET "UTF-8";
+body{
+	font:normal 14px "Microsoft Yahei";
+}
+
+/* 标题栏整体背景 */
+#header{
+	background-color:#000000;
+	filter:Alpha(Opacity=70);
+	opacity:0.7;
+	color:#ffffff;
+	padding:5px 0px;
+}
+
+/* 标题栏整体 */
+#header_body{
+	margin:0px auto;
+	width:1080px;
+	height:65px;
+}
+
+/* 标题栏按键 */
+#header_button{
+	float:left;
+	width:1080px;
+}
+#header_button span.header_button_content{
+	float:left;
+	display:block;
+	width:70px;
+	cursor:pointer;
+	text-align:center;
+	padding:5px 0px;
+	border:1px solid #e7e7e7;
+	border-radius:4px;
+	margin:0px 8px;
+}
+#header_button span.header_button_content:hover{
+	background-color:#e7e7e7;
+	color:blue;
+}
+
+/* 地址栏 */
+#header_address{
+	float:left;
+	width:1060px;
+	margin:10px 0px 3px 0px; 
+	padding:0px 10px;
+}
+#header_address_title{
+	margin-right:10px;
+}
+#header_address_contentner{
+	margin:0px 10px 0px 0px;
+}
+#header_address_contentner input{
+	background:none;
+	border:none;
+	border-bottom:1px solid #fff;
+	color:#fff;
+	font:italic 16px "sans-serif";
+	padding:0px 10px;
+	width:800px;
+}
+#header_address_button{
+	background:none;
+	border:none;
+	cursor:pointer;
+	color:#fff;
+}
+#header_address_button:hover{
+	text-decoration:underline;
+}
+
+/* 主内容  */
+#content_body{
+	width:1078px;
+	border-left:1px solid #e7e7e7;
+	border-right:1px solid #e7e7e7;
+	border-bottom:1px solid #e7e7e7;
+	padding:15px 0px;
+	margin:0px auto;
+	min-height:480px;
+}
+/* 主内容---文件列表容器  */
+#filelist_container{
+	float:left;
+	width:1058px;
+	padding:0px 10px;
+}
+/* 主内容---文件列表--表格展示方式样式  */
+#filelist{
+	float:left;
+	text-align:center;
+	width:1058px;
+}
+#filelist tr.odd{
+	background-color:#e7e7e7;
+}
+#filelist tr.even{
+	background-color:#fff;
+}
+#filelist tr:hover{
+	background-color:orange;
+	cursor:pointer;
+}
+#filelist th{
+	font:normal 16px "Microsoft Yahei";
+	color:#333;
+}
+#filelist .selectbox{
+	width:5%;
+	text-align:center;
+}
+#filelist .filename{
+	width:70%;
+	text-align:left;
+}
+#filelist .filetype{
+	width:10%;
+	text-align:center;
+}
+#filelist .operation_container{
+	width:15%;
+	text-align:center;
+}
+#filelist td.filename{
+	color:#601cea;
+}
+#filelist td.filetype{
+	color:#777;
+}
+#filelist td.operation_container span.operation_button{
+	color:blue;
+	text-decoration:underline;
+	cursor:pointer;
+}
+
+/* 主内容---文件过滤器  */
+#files_filter{
+	width:1068px;
+	border:1px solid #e7e7e7;
+	margin:0px auto;
+	padding:8px 5px 3px 5px;
+	height:30px;
+}
+#files_filter_name{
+	float:left;
+	border-right:1px solid #e7e7e7;
+	padding:0px 5px;
+}
+#files_filter span.files_filter_title{
+	font:normal 13px "Microsoft Yahei";
+	color:#777;
+	margin:0px 10px 0px 5px;
+	padding:0px 0px;
+}
+
+/* 尾部栏 */
+#footer{
+	margin:10px auto 0px auto;
+	width:1080px;
+	font:normal 12px "Microsoft Yahei";
+	text-align:center;
+	color:#c1c1c1;
+}

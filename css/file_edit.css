@@ -1,0 +1,8 @@
+@CHARSET "UTF-8";
+#code_editor{
+	background-color:#f1f1f1;
+	border:none;
+	width:100%;
+	min-height:480px;
+	resize:none;
+}

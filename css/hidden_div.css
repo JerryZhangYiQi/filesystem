@@ -1,0 +1,41 @@
+@CHARSET "UTF-8";
+
+/* 隐藏信息框 */
+div.hidden_div_container{
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+div.hidden_div_container div.hidden_div_bg{
+	position:absolute;
+	width:999em;
+	height:999em;
+	background-color:#000000;
+	top:0px;
+	left:0px;
+	opacity:0.5;
+	filter:Alpha(Opacity=50);
+	z-index:1000;
+}
+div.hidden_div_container div.hidden_div{
+	background-color:#ffffff;
+	z-index:1001;
+	position:absolute;
+	top:0px;
+	left:0px;
+	border:2px solid #d1d1d1;
+}
+div.hidden_div_container div.hidden_div div.hidden_div_title{
+	text-align:right;
+	background-color:#d1d1d1;
+}
+div.hidden_div_container div.hidden_div div.hidden_div_title span.close{
+	width:15px;
+	height:15px;
+	color:#fff;
+	cursor:pointer;
+	margin:0px 5px;
+}
+div.hidden_div_container div.hidden_div div.hidden_div_title span.close:hover{
+	color:orange;
+}
