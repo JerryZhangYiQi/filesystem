@@ -20,3 +20,40 @@ if($_GET['action']=='write_file'){
 	}
 	exit;
 }
+
+if($_GET['action']=='create_folder'){
+	
+	$file_system=new Filesystem($_POST['filepath']);
+	
+	$res=$file_system->create_folder($_POST['filename']);
+	
+	return $res;
+	exit;
+}
+
+if($_GET['action']=='create_file'){
+
+	$file_system=new Filesystem($_POST['filepath']);
+
+	$res=$file_system->create_file($_POST['filename']);
+
+	if($res){
+		echo 'true';
+	}else{
+		echo 'false';
+	}
+	exit;
+}
+
+if($_GET['action']=='del_file'){
+	$file_system=new Filesystem($_POST['filepath']);
+	
+	$res=$file_system->del_file($_POST['filename']);
+	
+	if($res){
+		echo 'true';
+	}else{
+		echo 'false';
+	}
+	exit;
+}

@@ -1,9 +1,9 @@
 <?php 
 require 'inc/init.php';
 if(empty($_POST['url'])){
-	$filesystem=new filesystem();
+	$filesystem=new Filesystem();
 }else{
-	$filesystem=new filesystem($_POST['url'],$_POST['type']);
+	$filesystem=new Filesystem($_POST['url'],$_POST['type']);
 }
 	$filelist=$filesystem->get_file_list();
 ?>
@@ -67,8 +67,8 @@ if(empty($_POST['url'])){
 								<td class="filename"><?php echo $v['filename']?></td>
 								<td class="filetype"><?php echo $v['filetype']?></td>
 								<td class="operation_container">
-								<span class="operation_button">删除</span>
-								<span class="operation_button">查看</span>
+									<span class="operation_button del_file">删除</span>
+									<span class="operation_button">重命名</span>
 								</td>
 								<input type="hidden" class="filetype" name="filetype" value="<?php echo $v['filetype']?>" />
 							</tr>

@@ -2,6 +2,7 @@
 
 /* 隐藏信息框 */
 div.hidden_div_container{
+	display:none;
 	position:absolute;
 	top:0px;
 	left:0px;

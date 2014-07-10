@@ -4,6 +4,7 @@ $(function(){
 	});
 });
 
+//重设位置
 function auto_reset(obj){
 	var left_w=($(document).width()-$(obj).width())/2;
 	var top_w=$('html').scrollTop()+($(window).height()-$(obj).height())/2;

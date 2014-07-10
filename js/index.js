@@ -16,12 +16,12 @@ $(function(){
 	});
 	
 	//点击表格行，如果是文件，进入文件修改，如果是目录，打开目录
-	$("body").on("click","#filelist tr.file_tr",function(){
-		if($(this).find("input.filetype").val()=='folder'){
-			var url=$("#url").val()+'/'+$(this).find("td.filename").html();
+	$("body").on("click","#filelist tr.file_tr td.filename",function(){
+		if($(this).parent().find("input.filetype").val()=='folder'){
+			var url=$("#url").val()+'/'+$(this).html();
 			goto_address(url,'direct');
 		}else{
-			var url=$("#url").val()+'/'+$(this).find("td.filename").html();
+			var url=$("#url").val()+'/'+$(this).html();
 			edit_file(url);
 		}
 	});
@@ -64,11 +64,63 @@ $(function(){
 		}
 	});
 	
-	//创建新文件
+	//显示创建新文件按钮
 	$("body").on("click","#header_button_createfile",function(){
-		$("#create_file").css("display","auto");
+		$("#create_file").css("display","block");
 		$("#display_current_url").html($("#header_address_content").val());
 		auto_reset($("div.hidden_div"));
+	});
+	//创建新文件
+	$("body").on("click","#create_file_button",function(){
+		var filename=$("#create_filename").val(),
+			filepath=$("#display_current_url").html();
+		if(filename!=''){
+			$.ajax({
+				type	:	"POST",
+				url		:	"file_action.php?action=create_file",
+				data	:	{
+					"filename"	:	filename,
+					"filepath"	:	filepath
+				},
+				success	:	function(data){
+					if(data=="true"){
+						edit_file(filepath+"/"+filename);
+						setTimeout("location.reload()",500);
+					}else{
+						alert("创建文件失败");
+					}
+				}
+			});
+		}else{
+			alert('文件名不能为空');
+			return false;
+		}
+	});
+	
+	//删除文件
+	$("body").on("click","#filelist tr.file_tr td.operation_container span.del_file",function(){
+		var filepath=$("#header_address_content").val(),
+			filename=$(this).parent().siblings("td.filename").html(),
+			tr=$(this).parent().parent();
+		if(confirm("是否删除"+filename+"?")){
+			$.ajax({
+				type	:	"POST",
+				url		:	"file_action.php?action=del_file",
+				data	:	{
+					"filepath"	:	filepath,
+					"filename"	:	filename
+				},
+				success	:	function(data){
+					if(data=='true'){
+						$(tr).remove();
+					}else{
+						alert("删除文件失败");
+					}
+				}
+			});
+		}else{
+			return false;
+		}
 	});
 });
 /* 访问文件夹 */
